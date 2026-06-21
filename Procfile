@@ -1,1 +1,1 @@
-web: gunicorn tahidi.wsgi
+web: gunicorn tahidi.wsgi+
