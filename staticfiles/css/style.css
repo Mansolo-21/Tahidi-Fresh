@@ -1,0 +1,530 @@
+:root{
+
+    --green:#6CC04A;
+    --orange:#F57C00;
+    --black:#111111;
+    --white:#FFFFFF;
+
+}
+
+body{
+
+    background:#f5f5f5;
+
+    font-family:Arial, sans-serif;
+
+}
+
+/* NAVBAR */
+
+.navbar{
+
+    background:#111111 !important;
+
+}
+
+.navbar-brand{
+
+    color:var(--green) !important;
+
+    font-size:2rem;
+
+    font-weight:900;
+
+}
+
+.navbar a{
+
+    color:white;
+
+    text-decoration:none;
+
+    margin-left:15px;
+
+    padding:8px 14px;
+
+    border-radius:8px;
+
+    transition:.3s;
+
+}
+
+.navbar a:hover{
+
+    background:var(--green);
+
+    color:white;
+
+}
+
+/* HERO */
+
+.hero-banner{
+
+    background:url("/static/images/tahidi-banner.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    min-height:550px;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.overlay{
+
+    min-height:550px;
+
+    background:rgba(0,0,0,.65);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.overlay h1{
+
+    font-size:5rem;
+
+    font-weight:900;
+
+}
+
+.overlay span{
+
+    color:var(--orange);
+
+}
+
+.hero-text{
+
+    font-size:1.5rem;
+
+    color:var(--green);
+
+}
+
+/* BUTTONS */
+
+.btn-green{
+
+    background:var(--green);
+
+    color:white;
+
+}
+
+.btn-green:hover{
+
+    background:#57a43a;
+
+    color:white;
+
+}
+
+.btn-orange{
+
+    background:var(--orange);
+
+    color:white;
+
+}
+
+.btn-orange:hover{
+
+    background:#d96f00;
+
+    color:white;
+
+}
+
+/* SERVICE BOXES */
+
+.service-box{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.1);
+
+    height:100%;
+
+}
+
+/* SECTION TITLE */
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+    font-weight:bold;
+
+}
+
+/* MENU CARDS */
+
+.menu-card{
+
+    background:white;
+
+    padding:25px;
+
+    text-align:center;
+
+    border-radius:15px;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.1);
+
+    transition:.3s;
+
+}
+
+.menu-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/* STEPS */
+
+.step-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.1);
+
+}
+
+.step-card h3{
+
+    color:var(--orange);
+
+    font-size:2rem;
+
+}
+
+/* FOOTER */
+
+footer{
+
+    background:#111111;
+
+    color:white;
+
+    margin-top:80px;
+
+    padding:40px;
+
+    text-align:center;
+
+}
+/* AUTH PAGES */
+
+.auth-wrapper{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:75vh;
+
+}
+
+.auth-card{
+
+    width:500px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+.auth-card h2{
+
+    color:#F57C00;
+
+    font-weight:900;
+
+    margin-bottom:10px;
+
+}
+
+.auth-card input{
+
+    width:100%;
+
+    padding:12px;
+
+    border:2px solid #ddd;
+
+    border-radius:10px;
+
+}
+
+.auth-card input:focus{
+
+    border-color:#6CC04A;
+
+    outline:none;
+
+}
+
+/* DASHBOARD */
+
+.dashboard-header{
+
+    background:#111;
+
+    color:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+}
+
+.dashboard-card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+    height:100%;
+
+}
+
+.dashboard-card h3{
+
+    color:#F57C00;
+
+    margin-bottom:15px;
+
+}
+
+.btn-green{
+
+    background:#6CC04A;
+
+    color:white;
+
+    border:none;
+
+}
+
+.btn-orange{
+
+    background:#F57C00;
+
+    color:white;
+
+    border:none;
+
+}
+
+/* FORM FIELDS */
+
+.form-control,
+.form-select{
+
+    border-radius:10px !important;
+
+    padding:12px !important;
+
+}
+
+.modal-content{
+    border-radius:15px;
+}
+
+.modal-header{
+    background: #212529;
+    color: white;
+}
+
+.modal-footer{
+    border-top:none;
+}
+
+.btn-danger{
+    background: #dc3545;
+}
+
+/* =========================
+   MOBILE RESPONSIVE STYLES
+========================= */
+
+@media (max-width: 768px){
+
+    /* NAVBAR */
+
+    .navbar-brand{
+        font-size:1.5rem;
+    }
+
+    .navbar a{
+        margin-left:0;
+        display:block;
+        margin-top:8px;
+    }
+
+    /* HERO */
+
+    .hero-banner,
+    .overlay{
+        min-height:400px;
+    }
+
+    .overlay h1{
+        font-size:2.5rem;
+    }
+
+    .hero-text{
+        font-size:1rem;
+        padding:0 15px;
+    }
+
+    /* AUTH PAGES */
+
+    .auth-wrapper{
+        padding:20px;
+    }
+
+    .auth-card{
+        width:100%;
+        padding:25px;
+    }
+
+    /* DASHBOARD */
+
+    .dashboard-header{
+        padding:25px 15px;
+    }
+
+    .dashboard-header h1{
+        font-size:1.8rem;
+    }
+
+    .dashboard-card{
+        margin-bottom:20px;
+        padding:20px;
+    }
+
+    /* SERVICE BOXES */
+
+    .service-box{
+        margin-bottom:20px;
+    }
+
+    /* MENU */
+
+    .menu-card{
+        margin-bottom:20px;
+        padding:20px;
+    }
+
+    .menu-card img{
+        width:100%;
+        height:auto;
+    }
+
+    /* STEPS */
+
+    .step-card{
+        margin-bottom:20px;
+    }
+
+    /* BUTTONS */
+
+    .btn,
+    .btn-green,
+    .btn-orange{
+        width:100%;
+        margin-bottom:10px;
+    }
+
+    /* TABLES */
+
+    table{
+        display:block;
+        overflow-x:auto;
+        white-space:nowrap;
+    }
+
+    /* FOOTER */
+
+    footer{
+        padding:25px 15px;
+        font-size:.9rem;
+    }
+
+}
+
+/* EXTRA SMALL PHONES */
+
+@media (max-width: 480px){
+
+    .overlay h1{
+        font-size:2rem;
+    }
+
+    .hero-text{
+        font-size:.9rem;
+    }
+
+    .navbar-brand{
+        font-size:1.3rem;
+    }
+
+    .auth-card{
+        padding:20px;
+    }
+
+    .dashboard-header h1{
+        font-size:1.5rem;
+    }
+
+    .dashboard-card h3{
+        font-size:1.1rem;
+    }
+
+    .dashboard-card p{
+        font-size:.9rem;
+    }
+
+}
