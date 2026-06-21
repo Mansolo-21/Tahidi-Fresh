@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/owner_dashboard.css' %}">
+
+<div class="dashboard-header">
+
+    <h1>Tahidi Owner Dashboard</h1>
+
+    <div class="dashboard-actions">
+
+        <a href="{% url 'request_list' %}" class="btn-dashboard">
+            Shopping Requests
+        </a>
+
+        <a href="{% url 'food_order_list' %}" class="btn-dashboard success">
+            Food Orders
+        </a>
+
+        <a href="{% url 'menu_management' %}" class="btn-dashboard warning">
+            Manage Menu
+        </a>
+
+    </div>
+
+</div>
+
+<div class="stats-grid">
+
+    <div class="stat-card">
+        <h5>Shopping Requests</h5>
+        <h2>{{ total_requests }}</h2>
+    </div>
+
+    <div class="stat-card">
+        <h5>Pending Requests</h5>
+        <h2>{{ pending_requests }}</h2>
+    </div>
+
+    <div class="stat-card">
+        <h5>Active Deliveries</h5>
+        <h2>{{ active_deliveries }}</h2>
+    </div>
+
+    <div class="stat-card">
+        <h5>Food Orders</h5>
+        <h2>{{ food_orders }}</h2>
+    </div>
+
+    <div class="stat-card wide">
+        <h5>Active Food Deliveries</h5>
+        <h2>{{ active_food_deliveries }}</h2>
+    </div>
+
+    <div class="stat-card wide revenue">
+        <h5>Completed Revenue</h5>
+        <h2>KES {{ total_food_revenue }}</h2>
+    </div>
+
+</div>
+<div class="menu-section">
+<h3>Menu Items</h3>
+<a
+    href="{% url 'add_menu_item' %}"
+    class="btn-dashboard success"
+>
+    + Add Menu Item
+</a>
+<div class="table-reponsive">
+<table class="table">
+
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for item in menu_items %}
+
+    <tr>
+
+        <td>{{ item.name }}</td>
+
+        <td>KES {{ item.price }}</td>
+
+        <td>
+
+            <a
+                href="{% url 'edit_menu_item' item.id %}"
+                class="btn btn-warning btn-sm"
+            >
+                Edit
+            </a>
+
+            <a
+                href="{% url 'delete_menu_item' item.id %}"
+                class="btn btn-danger btn-sm"
+            >
+                Delete
+            </a>
+
+        </td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>
+    Food Order #{{ order.id }}
+</h2>
+
+<hr>
+
+<p>
+    <strong>Status:</strong>
+    {{ order.status }}
+</p>
+
+<p>
+    <strong>Delivery Address:</strong>
+    {{ order.delivery_address }}
+</p>
+
+<p>
+    <strong>Notes:</strong>
+    {{ order.notes }}
+</p>
+
+<hr>
+
+<h4>Items Ordered</h4>
+
+<table class="table">
+
+    <thead>
+
+        <tr>
+            <th>Item</th>
+            <th>Qty</th>
+            <th>Price</th>
+            <th>Subtotal</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        {% for item in order.items.all %}
+
+        <tr>
+
+            <td>
+                {{ item.menu_item.name }}
+            </td>
+
+            <td>
+                {{ item.quantity }}
+            </td>
+
+            <td>
+                KES {{ item.menu_item.price }}
+            </td>
+
+            <td>
+                KES {{ item.subtotal }}
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+<hr>
+
+<h4>
+    Total: KES {{ order.total_price }}
+</h4>
+
+<a
+    href="{% url 'update_food_status' order.id 'preparing' %}"
+    class="btn btn-warning"
+>
+    Preparing
+</a>
+
+<a
+    href="{% url 'update_food_status' order.id 'ready' %}"
+    class="btn btn-info"
+>
+    Ready
+</a>
+
+<a
+    href="{% url 'update_food_status' order.id 'delivery' %}"
+    class="btn btn-primary"
+>
+    Out For Delivery
+</a>
+
+<a
+    href="{% url 'update_food_status' order.id 'completed' %}"
+    class="btn btn-success"
+>
+    Delivered
+</a>
+
+{% endblock %}

@@ -1,0 +1,253 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Tahidi Fresh
+{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+
+<section class="hero-banner">
+
+    <div class="overlay">
+
+        <h1>
+            TAHIDI
+            <span>FRESH</span>
+        </h1>
+
+        <p class="hero-text">
+            Fresh. Fast. Reliable.
+        </p>
+
+        <p>
+            Shopping • Delivery • Mishikaki
+        </p>
+
+        <div class="mt-4">
+
+            <a href="{% url 'create_request' %}"
+               class="btn btn-green btn-lg">
+
+                Start Shopping
+
+            </a>
+
+            <a href="{% url 'menu' %}"
+               class="btn btn-orange btn-lg">
+
+                Order Food
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="mt-5">
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <div class="service-box">
+
+                <h2>
+                    🛒 Tahidi Shopping
+                </h2>
+
+                <p>
+
+                    Send us your shopping list
+                    and we'll shop for you
+                    from your preferred supermarket.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="service-box">
+
+                <h2>
+                    🔥 Tahidi Mishikaki
+                </h2>
+
+                <p>
+
+                    Fresh charcoal grilled meat
+                    prepared daily and delivered
+                    to your doorstep.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- POPULAR ITEMS -->
+
+<section class="mt-5">
+
+    <h2 class="section-title">
+
+        🔥 Popular Menu
+
+    </h2>
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <div class="menu-card">
+
+                <h4>
+                    Beef Mishikaki
+                </h4>
+
+                <p>
+                    KES 50
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="menu-card">
+
+                <h4>
+                    Goat Mishikaki
+                </h4>
+
+                <p>
+                    KES 60
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="menu-card">
+
+                <h4>
+                    BBQ Chicken
+                </h4>
+
+                <p>
+                    KES 180
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="menu-card">
+
+                <h4>
+                    Family Pack
+                </h4>
+
+                <p>
+                    KES 1500
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+
+<section class="mt-5">
+
+    <h2 class="section-title">
+
+        How It Works
+
+    </h2>
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <div class="step-card">
+
+                <h3>1</h3>
+
+                <p>
+                    Place Order
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="step-card">
+
+                <h3>2</h3>
+
+                <p>
+                    We Shop / Prepare
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="step-card">
+
+                <h3>3</h3>
+
+                <p>
+                    Rider Delivers
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="step-card">
+
+                <h3>4</h3>
+
+                <p>
+                    Pay Upon Delivery
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

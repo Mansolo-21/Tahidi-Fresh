@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>
+        {% block title %}
+            Tahidi Fresh
+        {% endblock %}
+    </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/grill.css' %}">
+    <link rel="stylesheet" href="{% static 'css/orders.css' %}">
+    <link rel="stylesheet" href="{% static 'css/shopping.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owner_dashboard.css' %}">
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+
+    <div class="container">
+
+        <a class="navbar-brand"
+           href="/">
+            TAHIDI
+        </a>
+
+        <div>
+
+            {% if user.is_authenticated %}
+
+                {% if user.role == 'customer' %}
+
+                    <a href="{% url 'dashboard' %}">
+                        Dashboard
+                    </a>
+
+                    <a href="{% url 'create_request' %}">
+                        Shop
+                    </a>
+
+                    <a href="{% url 'menu' %}">
+                        Grill
+                    </a>
+
+                    <a href="{% url 'cart' %}">
+                        Cart
+                    </a>
+
+                {% endif %}
+                {% if user.role == 'admin'%}
+                <a href="{% url 'owner_dashboard' %}">Admin Center</a>
+                {% endif %}
+
+                {% if user.role == 'shopper'%}
+                <a href="{% url 'shopper_dashboard' %}">Shopper Dashboard</a>
+                {% endif %}
+
+                {% if user.role == 'rider'%}
+                <a href="{% url 'rider_dashboard' %}">Rider Dashboard</a>
+                {% endif %}
+                <a href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#logoutModal">
+                    Logout
+                </a>
+
+            {% else %}
+
+                <a href="{% url 'login' %}"
+                   class="btn btn-green me-2">
+                    Login
+                </a>
+
+                <a href="{% url 'register' %}"
+                   class="btn btn-orange">
+                    Register
+                </a>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</nav>
+
+<div class="container py-4">
+
+    {% block content %}
+    {% endblock %}
+
+</div>
+<footer>
+
+    <h3>
+        Tahidi Fresh
+    </h3>
+
+    <p>
+        Fresh • Fast • Reliable
+    </p>
+
+    <p>
+        Masai Lodge
+    </p>
+
+    <p>
+        WhatsApp: 0768 949 058
+    </p>
+
+</footer>
+<!-- logout confirmation Modal-->
+ <div  class="modal fade"
+    id="logoutModal"
+    tabindex="-1"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirm Logout</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to logout?
+            </div>
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">Cancel</button>
+                        <a href="{% url 'logout'%}" class="btn btn-danger">Logout</a>
+            </div>
+
+        </div>
+    </div>
+ </div>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

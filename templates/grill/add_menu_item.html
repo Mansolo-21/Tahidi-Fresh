@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-dark text-white">
+
+            <h2 class="mb-0">
+                Add Menu Item
+            </h2>
+
+        </div>
+
+        <div class="card-body">
+
+            <form
+                method="POST"
+                enctype="multipart/form-data"
+            >
+
+                {% csrf_token %}
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Name
+                    </label>
+
+                    {{ form.name }}
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Price (KES)
+                    </label>
+
+                    {{ form.price }}
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Description
+                    </label>
+
+                    {{ form.description }}
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Image
+                    </label>
+
+                    {{ form.image }}
+
+                </div>
+
+                <div class="form-check mb-3">
+
+                    {{ form.available }}
+
+                    <label class="form-check-label">
+                        Available
+                    </label>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn btn-success"
+                >
+                    Save Menu Item
+                </button>
+
+                <a
+                    href="{% url 'menu_management' %}"
+                    class="btn btn-secondary"
+                >
+                    Cancel
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

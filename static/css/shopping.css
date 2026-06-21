@@ -1,0 +1,12 @@
+.request-container{
+    display:flex;
+    justify-content:center;
+}
+
+.request-card{
+    width:800px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}

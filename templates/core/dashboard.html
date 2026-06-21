@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-header">
+
+    <h1>
+        Welcome, {{ request.user.username }}
+    </h1>
+
+    <p>
+        Role: {{ request.user.role }}
+    </p>
+
+</div>
+
+<div class="row mt-4">
+
+    <div class="col-md-4">
+        <div class="dashboard-card">
+            <h3>🛒 Shopping</h3>
+            <p>Create and manage shopping requests.</p>
+
+            <a href="{% url 'create_request' %}"
+               class="btn btn-green">
+
+                New Request
+
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="dashboard-card">
+            <h3>🔥 Grill</h3>
+            <p>Order delicious mishikaki and BBQ.</p>
+
+            <a href="{% url 'menu' %}"
+               class="btn btn-orange">
+
+                View Menu
+
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="dashboard-card">
+            <h3>📦 Orders</h3>
+            <p>Track all your active orders.</p>
+
+            <a href="{% url 'request_list' %}"
+               class="btn btn-dark">
+
+                My Orders
+
+            </a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

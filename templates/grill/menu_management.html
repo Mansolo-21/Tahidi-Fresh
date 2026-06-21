@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Menu Management</h1>
+
+<a href="{% url 'add_menu_item' %}" class="btn btn-success">
+    Add Menu Item
+</a>
+
+<hr>
+
+<table class="table">
+
+    <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Status</th>
+    </tr>
+
+    {% for item in items %}
+
+    <tr>
+
+        <td>
+            <img
+                src="{{ item.image.url }}"
+                width="80"
+            >
+        </td>
+
+        <td>{{ item.name }}</td>
+
+        <td>KES {{ item.price }}</td>
+
+        <td>
+
+            {% if item.available %}
+                Available
+            {% else %}
+                Unavailable
+            {% endif %}
+
+        </td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}

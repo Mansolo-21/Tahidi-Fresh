@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Grill Menu
+{% endblock %}
+
+{% block content %}
+
+<h1 class="menu-title">
+    🔥 Tahidi Grill Menu
+</h1>
+
+<div class="row">
+
+{% for item in items %}
+
+<div class="col-md-4 mb-4">
+
+    <div class="food-card">
+
+        {% if item.image %}
+            <img src="{{ item.image.url }}"
+                 class="food-image">
+        {% endif %}
+
+        <div class="food-body">
+
+            <h3>
+                {{ item.name }}
+            </h3>
+
+            <p>
+                {{ item.description }}
+            </p>
+
+            <h4>
+                KES {{ item.price }}
+            </h4>
+
+            <a href="{% url 'add_to_cart' item.id %}"
+               class="btn btn-warning w-100">
+
+                Add To Cart
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Cart
+{% endblock %}
+
+{% block content %}
+
+<h1>
+    🛒 Cart
+</h1>
+<p>Finalise your order from the food on the menu to ask for delivery</p>
+
+<table class="table table-striped">
+
+    <thead>
+
+        <tr>
+            <th>Item</th>
+            <th>Qty</th>
+            <th>Price</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+    {% for item in cart_items %}
+
+        <tr>
+
+            <td>
+                {{ item.menu_item.name }}
+            </td>
+
+            <td>
+                {{ item.quantity }}
+            </td>
+
+            <td>
+                KES {{ item.subtotal }}
+            </td>
+
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+<div class="total-box">
+
+    Total:
+    KES {{ total }}
+
+</div>
+
+<a href="{% url 'checkout' %}"
+   class="btn btn-success">
+
+    Checkout
+
+</a>
+
+{% endblock %}

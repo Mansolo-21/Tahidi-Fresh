@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>
+    Assign Rider
+</h2>
+
+<p>
+    Food Order #{{ order.id }}
+</p>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button
+        type="submit"
+        class="btn btn-primary"
+    >
+        Assign Rider
+    </button>
+
+</form>
+
+{% endblock %}

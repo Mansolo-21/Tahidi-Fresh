@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{%block content%}
+<h2>Assign Workers</h2>
+<p>Request #{{request_obj.id}}</p>
+<form method="POST">
+    {% csrf_token %}
+    <div class=mb-3>
+        <label>Shopper</label>{{form.shopper}}
+    </div>
+    <div class+mb-3>
+        <label>Rider</label>{{form.rider}}
+    </div>
+    <button type="submit" class+btn btn-primary>Save Assignment</button>
+</form>
+{% endblock %}
